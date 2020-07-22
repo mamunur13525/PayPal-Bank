@@ -1,0 +1,11 @@
+.login{
+    font-size: 40px;
+}
+.submit-form{
+    padding:100px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(54, 52, 52, 0.555);
+}
+.btn{
+    width: 100px;
+}
