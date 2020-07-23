@@ -9,3 +9,46 @@
 .btn{
     width: 100px;
 }
+#tranjaction-area{
+    display: none;
+    padding:100px;
+}
+#tranjaction-area .tranjaction-title{
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.depojit{
+    margin:0px 20px;
+    background:slateblue;
+    padding:20px 30px;
+    border-radius: 10px;
+    color:white;;
+}
+.withdraw{
+    margin:0px 20px;
+    background-color:#e95f35;
+    padding:20px 30px;
+    border-radius: 10px;
+    color:white;;
+}
+.balance{
+    margin:0px 20px;
+    background:rgb(223, 145, 0);
+    padding:20px 30px;
+    border-radius: 10px;
+    color:white;;
+}
+.deposit, .withdrass {
+    padding: 40px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 4px 9px 15px rgb(88 87 87 / 28%);
+}
+.form-control{
+    margin:15px 0px 25px;
+}
+.col-md-6{
+   
+   
+}

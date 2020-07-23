@@ -18,11 +18,110 @@
             <br>
             <input class="form-control" type="password" placeholder="Enter password" name="" id="">
             <br>
-            <button class="btn btn-success">Enter</button>
+            <button id="login" class="btn btn-success">Enter</button>
         </div>
     </main>
 
+<div id="tranjaction-area">
+    <h1 class="tranjaction-title">transaction area</h1 class="d-none">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="depojit">
+                    <h5>Depojit</h5>
+                    <h1>$<span id="currentdeposit">00</span></h1>
+                </div>
+                
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw">
+                <h5>Withdraw</h5>
+                <h1>$ <span id="withdrawTotal">00</span></h1>
+            </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance">
+                <h5>Balance</h5>
+                <h1>$ <span id="currentBalance">1240</span>    </h1>
+            </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6 ">
+                <div class="deposit">
+                <h2>Deposit</h2>
+                <input id="depositamount" type="number" class="form-control" placeholder="$ amount you want to deposit">
+                <button id="depositbutton" class="btn btn-success">Deposit</button>
+            </div>
+            </div>
+            <div class="col-md-6 ">
+                <div class="withdrass">
+                    
+                <h2>Withdraw</h2>
+                <input id="withdrawAmout" type="number" class="form-control" placeholder="$ amount you want to deposit">
+                <button id="withdrawBtn"  class="btn btn-success">Withdraw</button>
+                
+            </div>
+            </div>
+        </div>
+</div>
+<script>
+    /* Login Button  */
+    const loginBtn = document.getElementById('login');
+    loginBtn.addEventListener('click',function(){
+       const loginArea = document.getElementById('login-form');
+       loginArea.style.display = "none";
+
+       const transArea =document.getElementById('tranjaction-area');
+
+       transArea.style.display="block";
+
+    });
+    /* Deposit Buttn */
+    const depositBtn = document.getElementById('depositbutton');
+    depositBtn.addEventListener('click', function(){
+        let depostiAmount = document.getElementById('depositamount').value;
+        depostiAmount = parseFloat(depostiAmount);
+
+        let currentDeposit = document.getElementById('currentdeposit').innerText;
+        currentDeposit= parseFloat(currentDeposit);
+        totalDeposit = currentDeposit + depostiAmount;
+        document.getElementById('currentdeposit').innerText = totalDeposit;
+        document.getElementById('depositamount').value= "";
 
 
+        
+
+
+        var currentBalance = document.getElementById('currentBalance').innerText;
+        currentBalance = parseFloat(currentBalance);
+        var totalBalce = currentBalance + depostiAmount;
+        document.getElementById('currentBalance').innerText = totalBalce;
+    })
+   
+
+   /* withdraw function */
+    const withdrawBtn = document.getElementById('withdrawBtn');
+
+    withdrawBtn.addEventListener('click',function(){
+        let withdrawAmout = document.getElementById('withdrawAmout').value;
+         withdrawAmout = parseFloat(withdrawAmout);
+
+         var withdrawTotal = document.getElementById('withdrawTotal').innerText;
+        withdrawTotal =parseFloat(withdrawTotal);
+        var totalWithdraw = withdrawTotal + withdrawAmout ;
+        document.getElementById('withdrawTotal').innerText = totalWithdraw;
+
+        document.getElementById('withdrawAmout').value ='';
+
+
+         var currentBalance = document.getElementById('currentBalance').innerText;
+        currentBalance = parseFloat(currentBalance);
+           var totalBalance = currentBalance - withdrawAmout;
+           document.getElementById('currentBalance').innerText = totalBalance;
+        
+    })
+
+
+</script>
 </body>
 </html>
